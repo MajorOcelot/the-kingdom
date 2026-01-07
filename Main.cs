@@ -1,5 +1,15 @@
 ﻿// The Kingdom: The Text-based RPG
 
+/* ------ TODO ------ */
+// Figure out how to build the player character =>
+// Converting strings/integers into enums for player input fields
+// Finish the Blind Man encounter
+// Create friendly NPCs
+// Create enemies/bosses
+// Create Armor, Race, Gender, and Age parameters to modify damage/standing with certain people
+// Decide what towns/locations/shops are going to exist
+// Come up with town/location/shop names
+
 using TheKingdom;
 
 Game();
