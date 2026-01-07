@@ -12,6 +12,8 @@ static void Game()
 
     PlayerCharacter playerCharacter = BuildCharacter();
 
+    BlindMan(playerCharacter);
+
     Console.ReadKey();
 }
 #endregion
@@ -48,7 +50,7 @@ static void IntroText()
     // Initial encounter with Soluna
     Console.WriteLine("\nA melancholic voice starts glimmering in your ears causing slight tears to swell in your eyes.\n");
 
-    SolunaSpeech("You....\nYou are not like the those who have come before...\nListen well....\n");
+    Soluna("You....\nYou are not like the those who have come before...\nListen well....\n");
 }
 #endregion
 
@@ -57,7 +59,7 @@ static string GetPlayerName()
 {
     while (true)
     {
-        SolunaSpeech("What do you call yourself?");
+        Soluna("What do you call yourself?");
         string playerName = Console.ReadLine();
 
         if (!string.IsNullOrEmpty(playerName)) { return playerName; }
@@ -69,7 +71,7 @@ static string GetPlayerRace()
 {
     while (true)
     {
-        SolunaSpeech("\nWhat race are you?");
+        Soluna("\nWhat race are you?");
 
         Console.WriteLine("1. Human\n" +
                           "2. Elf\n" +
@@ -87,7 +89,7 @@ static string GetPlayerClass()
 {
     while (true)
     {
-        SolunaSpeech("\nWhat class are you?");
+        Soluna("\nWhat class are you?");
         Console.WriteLine("1. Warrior\n" +
                           "2. Paladin\n" +
                           "3. Mage\n" +
@@ -106,7 +108,7 @@ static string GetPlayerGender()
 {
     while (true)
     {
-        SolunaSpeech("\nWhat is your gender?");
+        Soluna("\nWhat is your gender?");
         string playerGender = Console.ReadLine();
 
         if (!string.IsNullOrEmpty(playerGender)) { return playerGender; }
@@ -118,7 +120,7 @@ static int GetPlayerAge()
 {
     while (true)
     {
-        SolunaSpeech("\nWhat is your age?");
+        Soluna("\nWhat is your age?");
         int playerAge = Convert.ToInt32(Console.ReadLine());
 
         if (int.IsPositive(playerAge)) { return playerAge; }
@@ -160,7 +162,7 @@ static PlayerCharacter BuildCharacter()
                 playerCharacter.PlayerGender = pGender;
                 playerCharacter.PlayerAge = pAge;
 
-                Console.WriteLine($"\nVery well, {pName}. Let's see what color your heart is...\n");
+                Soluna($"\nVery well, {pName}. Let's see what color your heart is...\n");
 
                 return playerCharacter;
             }
@@ -174,10 +176,18 @@ static PlayerCharacter BuildCharacter()
 #endregion
 
 #region Character Speech Methods
-static void SolunaSpeech(string dialogue)
+static void Soluna(string dialogue)
 {
     Console.ForegroundColor = ConsoleColor.DarkBlue;
     Console.WriteLine(dialogue);
     Console.ForegroundColor = ConsoleColor.Black;
 }
 #endregion
+
+static void BlindMan(PlayerCharacter player)
+{
+    Console.WriteLine("After what feels like an eternity, you manage to open your eyes and raise your head.\n" +
+                      "The pain is gone and all you can hear is the crackling coming from your torch, flame dancing with the wind.\n\n");
+
+    Console.WriteLine("'That cannot be natural...', you think to yourself.\n");
+}
