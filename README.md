@@ -9,8 +9,8 @@ The main purpose of this project is to provide myself a sandbox type of environm
 **Version 0.1** - In Development
 
 ### Progress
-Customized console background and foreground colors
-Intro text art
-Adventure primer
-One NPC speech
-Character creation
+Customized console background and foreground colors  
+Intro text art  
+Adventure primer  
+One NPC speech  
+Character creation  
