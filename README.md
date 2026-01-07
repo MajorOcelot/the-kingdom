@@ -1,5 +1,7 @@
 # The Kingdom: The Text-based RPG
 
+![The Kingdom Banner](/Assets/Images/TheKingdomBannerA.png)
+
 The Kingdom is a text-based RPG game built with C#.
 
 ### Project Purpose
