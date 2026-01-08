@@ -55,7 +55,7 @@ static void IntroText()
                       "Various tales of debauchery and the insipid practices performed by their government have spread across the globe.\n");
     Console.WriteLine("You have no wealth.\n" +
                       "You have no status.\n\n" +
-                      "The only things you own are a sword, a knife, some medical supplies and the clothes on your back.");
+                      "The only things you own are a sword, a shield, some medical supplies and the armor on your back.");
 
     // Initial encounter with Soluna
     Console.WriteLine("\nA melancholic voice starts glimmering in your ears causing slight tears to swell in your eyes.\n");
