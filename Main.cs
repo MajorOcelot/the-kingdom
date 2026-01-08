@@ -194,10 +194,15 @@ static void Soluna(string dialogue)
 }
 #endregion
 
+#region Encounters
 static void BlindMan(PlayerCharacter player)
 {
     Console.WriteLine("After what feels like an eternity, you manage to open your eyes and raise your head.\n" +
                       "The pain is gone and all you can hear is the crackling coming from your torch, flame dancing with the wind.\n\n");
 
-    Console.WriteLine("'That cannot be natural...', you think to yourself.\n");
+    Console.WriteLine("'That cannot be natural...', you think to yourself.\n" +
+                      "You look into the distance and see a silouhette of a tower. What do you wish to do?");
+
+
 }
+#endregion
