@@ -14,6 +14,9 @@ namespace TheKingdom
         private string _playerGender;
         private int _playerAge;
 
+        private int _playerHealth = 75;
+        private int _playerMana = 25;
+
         public PlayerCharacter() 
         {
             _playerName = PlayerName;
@@ -32,5 +35,9 @@ namespace TheKingdom
         public string PlayerGender { get { return _playerGender; } set { _playerGender = value; } }
 
         public int PlayerAge { get { return _playerAge; } set { _playerAge = value; } }
+
+        public int PlayerHealth { get { return _playerHealth; } set { _playerHealth = value; } }
+
+        public int PlayerMana { get { return _playerMana; } set { _playerMana = value; } }
     }
 }

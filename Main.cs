@@ -1,8 +1,6 @@
 ﻿// The Kingdom: The Text-based RPG
 
 /* ------ TODO ------ */
-// Figure out how to build the player character =>
-// Converting strings/integers into enums for player input fields
 // Finish the Blind Man encounter
 // Create friendly NPCs
 // Create enemies/bosses
@@ -10,6 +8,8 @@
 // Decide what towns/locations/shops are going to exist
 // Come up with town/location/shop names
 
+using System.Numerics;
+using System.Runtime.CompilerServices;
 using TheKingdom;
 
 Game();
@@ -22,7 +22,7 @@ static void Game()
 
     PlayerCharacter playerCharacter = BuildCharacter();
 
-    BlindMan(playerCharacter);
+    TheTower(playerCharacter);
 
     Console.ReadKey();
 }
@@ -185,7 +185,14 @@ static PlayerCharacter BuildCharacter()
 }
 #endregion
 
-#region Character Speech Methods
+#region Dialogue Methods
+static void UserAction(string action)
+{
+    Console.ForegroundColor = ConsoleColor.Green;
+    Console.WriteLine(action);
+    Console.ForegroundColor = ConsoleColor.Black;
+}
+
 static void Soluna(string dialogue)
 {
     Console.ForegroundColor = ConsoleColor.DarkBlue;
@@ -194,15 +201,72 @@ static void Soluna(string dialogue)
 }
 #endregion
 
-#region Encounters
-static void BlindMan(PlayerCharacter player)
+#region The Tower
+static void TheTower(PlayerCharacter player)
 {
-    Console.WriteLine("After what feels like an eternity, you manage to open your eyes and raise your head.\n" +
-                      "The pain is gone and all you can hear is the crackling coming from your torch, flame dancing with the wind.\n\n");
+    Console.Clear();
+    Console.WriteLine("After what feels like an eternity, you manage to open your eyes and raise your head.\n\n" +
+                      "The pain is gone and all you can hear is the crackling coming from your torch, its flame dancing with the wind.\n");
 
     Console.WriteLine("'That cannot be natural...', you think to yourself.\n" +
-                      "You look into the distance and see a silouhette of a tower. What do you wish to do?");
+                      "You look into the distance and see a silouhette of a tower.\n");
 
+    TowerIntro(player);
+}
+#endregion
+
+#region Tower Logic
+static void TowerIntro (PlayerCharacter player)
+{
+    Console.WriteLine("What would you like to do?\n");
+
+    Console.WriteLine("1. Move forward and start approaching the tower.\n" +
+                      "2. Check yourself for injuries.\n" +
+                      "3. Take some time for sustenance.\n");
+
+    int response = Convert.ToInt32(Console.ReadLine());
+
+    if (response == 1) { TowerEntranceHub(); }
+
+    else if (response == 2) 
+    { 
+        UserAction("\nYou notice there is a small gash in your armor, but there are no signs of injury.\n");
+        TowerIntro(player);
+    }
+    else if (response == 3)
+    {
+        if (player.PlayerHealth < 100 && player.PlayerMana < 100)
+        {
+            UserAction("\nYou fish a beef pasty out of your pack and begin to eat it. You gained 25 health and 5 mana.");
+            player.PlayerHealth += 25;
+            player.PlayerMana += 5;
+
+            Console.WriteLine($"\nYou now have {player.PlayerHealth} health and {player.PlayerMana} mana.\n");
+
+            TowerIntro(player);
+        }
+        else 
+        { 
+            Console.WriteLine("\nYou have already replenished your health and mana enough to survive.\n");
+            TowerIntro(player);
+        }
+    }
+    else 
+    { 
+        Console.WriteLine("Please choose a valid option.");
+        TowerIntro(player);
+    }
+}
+
+static void TowerEntranceHub()
+{
+    UserAction("\nYou begin walking towards the tower, looking for any sign of movement.\n");
+
+    // FINISH THE FUCKING TOWER ENTRANCE HUB METHOD
+}
+
+static void BlindMan()
+{
 
 }
 #endregion
