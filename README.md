@@ -19,5 +19,5 @@ Character Creation - &check;
 Dialogue Formatting Methods - &check;  
 First Encounter (The Tower) - &check;  
 The Tower Logic - &check;  
-Tower Entrance Hub - [ ]  
-Blind Man Sub-Encounter - [ ]  
+Tower Entrance Hub  
+Blind Man Sub-Encounter  
