@@ -10,9 +10,14 @@ The main purpose of this project is to provide myself a sandbox type of environm
 ### Current Status
 **Version 0.1** - In Development
 
-### Progress
-Customized console background and foreground colors  
-Intro text art  
-Adventure primer  
-One NPC speech  
-Character creation  
+### Features
+Console Initialization - [x]
+Adventure Introduction - [x]
+Get Player Information - [x]
+PlayerCharacter Class - [x]
+Character Creation - [x]
+Dialogue Formatting Methods - [x]
+First Encounter (The Tower) - [x]
+The Tower Logic - [x]
+Tower Entrance Hub - [ ]
+Blind Man Sub-Encounter - [ ]
