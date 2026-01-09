@@ -11,13 +11,13 @@ The main purpose of this project is to provide myself a sandbox type of environm
 **Version 0.1** - In Development
 
 ### Features
-Console Initialization - [x]
-Adventure Introduction - [x]
-Get Player Information - [x]
-PlayerCharacter Class - [x]
-Character Creation - [x]
-Dialogue Formatting Methods - [x]
-First Encounter (The Tower) - [x]
-The Tower Logic - [x]
-Tower Entrance Hub - [ ]
-Blind Man Sub-Encounter - [ ]
+Console Initialization - &check;  
+Adventure Introduction - &check;  
+Get Player Information - &check;    
+PlayerCharacter Class - &check;  
+Character Creation - &check;  
+Dialogue Formatting Methods - &check;  
+First Encounter (The Tower) - &check;  
+The Tower Logic - &check;  
+Tower Entrance Hub - [ ]  
+Blind Man Sub-Encounter - [ ]  
