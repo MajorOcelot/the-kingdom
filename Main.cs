@@ -8,8 +8,7 @@
 // Decide what towns/locations/shops are going to exist
 // Come up with town/location/shop names
 
-using System.Numerics;
-using System.Runtime.CompilerServices;
+using Newtonsoft.Json;
 using TheKingdom;
 
 Game();
@@ -37,6 +36,33 @@ static void ConsoleInitialization()
     Console.Clear();
     Console.ForegroundColor = ConsoleColor.Black;
 }
+#endregion
+
+#region Save/Load Game
+static void SaveGame(PlayerCharacter player)
+{
+    string saveResponse = Console.ReadLine();
+
+    string gameSaveData = JsonConvert.SerializeObject(player);
+    string gameSavePath = 
+
+    try
+    {
+        File.WriteAllText(player);
+    }
+    catch
+    {
+
+    }
+
+    Console.WriteLine("Your game has been saved.");
+}
+
+static void LoadGame()
+{
+
+}
+
 #endregion
 
 #region Game Intro Text
