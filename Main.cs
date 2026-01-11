@@ -21,6 +21,8 @@ static void Game()
 
     PlayerCharacter playerCharacter = BuildCharacter();
 
+    SaveGame(playerCharacter);
+
     TheTower(playerCharacter);
 
     Console.ReadKey();
@@ -41,27 +43,35 @@ static void ConsoleInitialization()
 #region Save/Load Game
 static void SaveGame(PlayerCharacter player)
 {
-    string saveResponse = Console.ReadLine();
+    string directoryPath = @"C:\TheKingdom";
+    Directory.CreateDirectory("TheKingdom");
+
+    if (Directory.Exists(directoryPath))
+    {
+        Console.WriteLine("Game directory already exists. A new one will not be created.");
+    }
 
     string gameSaveData = JsonConvert.SerializeObject(player);
-    string gameSavePath = 
+
+    Console.WriteLine(gameSaveData);
 
     try
     {
-        File.WriteAllText(player);
+        File.WriteAllText(directoryPath, gameSaveData);
+        Console.WriteLine("Your game has been saved.");
     }
     catch
     {
-
+        Console.WriteLine("There was an error saving your file. Please try again.");
     }
 
-    Console.WriteLine("Your game has been saved.");
+    Console.ReadKey();
 }
 
-static void LoadGame()
-{
+//static void LoadGame()
+//{
 
-}
+//}
 
 #endregion
 
@@ -96,7 +106,7 @@ static string GetPlayerName()
     while (true)
     {
         Soluna("What do you call yourself?");
-        string playerName = Console.ReadLine();
+        string? playerName = Console.ReadLine();
 
         if (!string.IsNullOrEmpty(playerName)) { return playerName; }
         else { continue; }
@@ -114,7 +124,7 @@ static string GetPlayerRace()
                           "3. Dwarf\n" +
                           "4. Fairy\n");
 
-        string playerRace = Console.ReadLine();
+        string? playerRace = Console.ReadLine();
 
         if (!string.IsNullOrEmpty(playerRace)) { return playerRace; }
         else { continue; }
@@ -133,7 +143,7 @@ static string GetPlayerClass()
                           "5. Priest\n" +
                           "6. Shaman\n");
 
-        string playerClass = Console.ReadLine();
+        string? playerClass = Console.ReadLine();
 
         if (!string.IsNullOrEmpty(playerClass)) { return playerClass; }
         else { continue; }
@@ -145,7 +155,7 @@ static string GetPlayerGender()
     while (true)
     {
         Soluna("\nWhat is your gender?");
-        string playerGender = Console.ReadLine();
+        string? playerGender = Console.ReadLine();
 
         if (!string.IsNullOrEmpty(playerGender)) { return playerGender; }
         else { continue; }
@@ -184,7 +194,7 @@ static PlayerCharacter BuildCharacter()
                           $"Age:\t\t {pAge}\n");
 
         Console.WriteLine("Is this who you really are?");
-        string answer = Console.ReadLine();
+        string? answer = Console.ReadLine();
 
         if (!string.IsNullOrEmpty(answer))
         {
@@ -291,8 +301,8 @@ static void TowerEntranceHub()
     // FINISH THE FUCKING TOWER ENTRANCE HUB METHOD
 }
 
-static void BlindMan()
-{
+//static void BlindMan()
+//{
 
-}
+//}
 #endregion
