@@ -22,6 +22,7 @@ static void Game()
     PlayerCharacter playerCharacter = BuildCharacter();
 
     SaveGame(playerCharacter);
+    LoadGame();
 
     TheTower(playerCharacter);
 
@@ -40,10 +41,10 @@ static void ConsoleInitialization()
 }
 #endregion
 
-#region Save/Load Game
+#region Save Game
 static void SaveGame(PlayerCharacter player)
 {
-    string directoryPath = @"C:\TheKingdom";
+    string directoryPath = $"gameSave.json";
     Directory.CreateDirectory("TheKingdom");
 
     if (Directory.Exists(directoryPath))
@@ -67,12 +68,39 @@ static void SaveGame(PlayerCharacter player)
 
     Console.ReadKey();
 }
+#endregion
 
-//static void LoadGame()
-//{
+#region Load Game
+static void LoadGame()
+{
+    Console.WriteLine("Would you like to load your save file?");
+    string? userResponse = Console.ReadLine();
 
-//}
+    if (userResponse == "Yes")
+    {
+        try
+        {
+            string loadData = File.ReadAllText("gameSave.json");
+            Console.WriteLine("Your file has been loaded");
+            Console.WriteLine(loadData);
 
+            PlayerCharacter? playerCharacter = JsonConvert.DeserializeObject<PlayerCharacter>(loadData);
+            Console.WriteLine("Your character has been recreated.");
+            Console.WriteLine($"{playerCharacter.PlayerName} {playerCharacter.PlayerClass}");
+
+            Console.ReadKey();
+        }
+        catch
+        {
+            Console.WriteLine("There was an error loading your game. Please try again.");
+        }
+    }
+    else if (userResponse == "No")
+    {
+        return;
+    }
+    else { Console.WriteLine("Please enter Yes or No."); LoadGame(); }
+}
 #endregion
 
 #region Game Intro Text

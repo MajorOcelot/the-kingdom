@@ -24,6 +24,8 @@ namespace TheKingdom
             _playerClass = PlayerClass;
             _playerGender = PlayerGender;
             _playerAge = PlayerAge;
+            _playerHealth = PlayerHealth;
+            _playerMana = PlayerMana;
         }
 
         public string PlayerName { get { return _playerName; } set { _playerName = value; } }
