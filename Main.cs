@@ -85,7 +85,7 @@ static void LoadGame()
             Console.WriteLine(loadData);
 
             PlayerCharacter? playerCharacter = JsonConvert.DeserializeObject<PlayerCharacter>(loadData);
-            Console.WriteLine("Your character has been recreated.");
+            Console.WriteLine("Your character has been loaded.");
             Console.WriteLine($"{playerCharacter.PlayerName} {playerCharacter.PlayerClass}");
 
             Console.ReadKey();
