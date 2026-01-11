@@ -10,16 +10,22 @@ The main purpose of this project is to provide myself a sandbox type of environm
 ### Current Status
 **Version 0.1** - In Development
 
+## Game Progression
+
 ### Features
 Console Initialization - &check;  
+Dialogue Formatting Methods - &check;  
+Save Game  
+Load Game  
+
+
+### Game Logic
+
 Adventure Introduction - &check;  
 Get Player Information - &check;    
 PlayerCharacter Class - &check;  
 Character Creation - &check;  
-Dialogue Formatting Methods - &check;  
 First Encounter (The Tower) - &check;  
-The Tower Logic - &check;  
-Save Game  
-Load Game  
+Tower Intro - &check;  
 Tower Entrance Hub  
 Blind Man Sub-Encounter  
