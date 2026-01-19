@@ -44,9 +44,11 @@ static void ConsoleInitialization()
 #region Save Game
 static void SaveGame(PlayerCharacter player)
 {
+    // Create game save directory if it doesn't exist
     string directoryPath = $"gameSave.json";
     Directory.CreateDirectory("TheKingdom");
 
+    // Check if directory already exists
     if (Directory.Exists(directoryPath))
     {
         Console.WriteLine("Game directory already exists. A new one will not be created.");
@@ -56,6 +58,7 @@ static void SaveGame(PlayerCharacter player)
 
     Console.WriteLine(gameSaveData);
 
+    // Save game data to file
     try
     {
         File.WriteAllText(directoryPath, gameSaveData);
@@ -73,11 +76,14 @@ static void SaveGame(PlayerCharacter player)
 #region Load Game
 static void LoadGame()
 {
+    // Prompt user to load save file
     Console.WriteLine("Would you like to load your save file?");
+    // Get user response
     string? userResponse = Console.ReadLine();
 
     if (userResponse == "Yes")
     {
+        // Load game data from file
         try
         {
             string loadData = File.ReadAllText("gameSave.json");
@@ -214,6 +220,7 @@ static PlayerCharacter BuildCharacter()
         string pGender = GetPlayerGender();
         int pAge = GetPlayerAge();
 
+        // Display character information for confirmation
         Console.WriteLine($"\n### Character Information ###\n" +
                           $"Name:\t\t {pName}\n" +
                           $"Race:\t\t {pRace}\n" +
@@ -224,6 +231,7 @@ static PlayerCharacter BuildCharacter()
         Console.WriteLine("Is this who you really are?");
         string? answer = Console.ReadLine();
 
+        // Confirm character creation
         if (!string.IsNullOrEmpty(answer))
         {
             if (answer == "Yes")
@@ -269,6 +277,7 @@ static void Soluna(string dialogue)
 static void TheTower(PlayerCharacter player)
 {
     Console.Clear();
+    
     Console.WriteLine("After what feels like an eternity, you manage to open your eyes and raise your head.\n\n" +
                       "The pain is gone and all you can hear is the crackling coming from your torch, its flame dancing with the wind.\n");
 
