@@ -271,6 +271,13 @@ static void Soluna(string dialogue)
     Console.WriteLine(dialogue);
     Console.ForegroundColor = ConsoleColor.Black;
 }
+
+static void BlindMan(string dialogue)
+{
+    Console.ForegroundColor = ConsoleColor.DarkRed;
+    Console.WriteLine(dialogue);
+    Console.ForegroundColor = ConsoleColor.Black;
+}
 #endregion
 
 #region The Tower
@@ -299,8 +306,10 @@ static void TowerIntro (PlayerCharacter player)
 
     int response = Convert.ToInt32(Console.ReadLine());
 
-    if (response == 1) { TowerEntranceHub(); }
-
+    if (response == 1) 
+    { 
+        TowerEntranceHub(); 
+    }
     else if (response == 2) 
     { 
         UserAction("\nYou notice there is a small gash in your armor, but there are no signs of injury.\n");
@@ -333,13 +342,45 @@ static void TowerIntro (PlayerCharacter player)
 
 static void TowerEntranceHub()
 {
-    UserAction("\nYou begin walking towards the tower, looking for any sign of movement.\n");
+    Console.WriteLine("\nYou begin walking towards the tower, looking for any sign of movement.\n");
 
-    // FINISH THE FUCKING TOWER ENTRANCE HUB METHOD
+    Console.WriteLine("\nAs you approach, you see a light flickering in one of the tower's windows.\n");
+    Console.WriteLine("You notice a door slightly tapping along with the wind, obviously not locked.\n");
+
+    while (true)
+    {
+        Console.WriteLine("\nWhat would you like to do?\n" +
+                  "1. Continue walking past the tower.\n" +
+                  "2. Search your surroundings.\n" +
+                  "3. Walk into the tower.\n");
+        int towerDecision = Convert.ToInt32(Console.ReadLine());
+
+        if (towerDecision == 1)
+        {
+            Console.WriteLine("\nYou continue walking past the tower, shielding your face from wind.");
+            continue;
+        }
+        else if (towerDecision == 2)
+        {
+            Console.WriteLine("You look around, trying to make out any shapes or shadows in the distance, but to no avail.\n" +
+                              "You listen closer and manage to make out the sound of windchimes over the relentless wind.");
+            continue;
+        }
+        else if (towerDecision == 3)
+        {
+            UserAction("\nYou decide to walk up to the oak door that leads into the tower, still flapping along with the wind.\n");
+            BlindManEncounter();
+            break;
+        }
+    }
 }
 
-//static void BlindMan()
-//{
+static void BlindManEncounter()
+{
+    Console.WriteLine("As you walk in, you notice a man sitting at the table next to a lantern with a dimmed flame.\n" +
+                      "The man is hunched over, breathing heavily. You hear a faint rattle with each inhale.\n" +
+                      "As you pull the door shut behind you, the man snaps his gaze in your direction.\n");
 
-//}
+    BlindMan("Who the fuck are you? Identify yourself.");    
+}
 #endregion
