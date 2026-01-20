@@ -26,8 +26,8 @@ The main purpose of this project is to provide myself a sandbox type of environm
 ### Features
 Console Initialization - &check;  
 Dialogue Formatting Methods - &check;  
-Save Game  
-Load Game  
+Save Game - &check;  
+Load Game - &check;  
 
 
 ### Game Logic
@@ -38,5 +38,5 @@ PlayerCharacter Class - &check;
 Character Creation - &check;  
 First Encounter (The Tower) - &check;  
 Tower Intro - &check;  
-Tower Entrance Hub  
+Tower Entrance Hub - &check;  
 Blind Man Sub-Encounter  
