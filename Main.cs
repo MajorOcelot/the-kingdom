@@ -295,7 +295,7 @@ static void TheTower(PlayerCharacter player)
 }
 #endregion
 
-#region Tower Logic
+#region Tower Intro
 static void TowerIntro (PlayerCharacter player)
 {
     Console.WriteLine("What would you like to do?\n");
@@ -339,7 +339,9 @@ static void TowerIntro (PlayerCharacter player)
         TowerIntro(player);
     }
 }
+#endregion
 
+#region Tower Entrance Hub
 static void TowerEntranceHub()
 {
     Console.WriteLine("\nYou begin walking towards the tower, looking for any sign of movement.\n");
@@ -374,7 +376,9 @@ static void TowerEntranceHub()
         }
     }
 }
+#endregion
 
+#region Blind Man Encounter
 static void BlindManEncounter()
 {
     Console.WriteLine("As you walk in, you notice a man sitting at the table next to a lantern with a dimmed flame.\n" +
