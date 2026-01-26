@@ -308,7 +308,7 @@ static void TowerIntro (PlayerCharacter player)
 
     if (response == 1) 
     { 
-        TowerEntranceHub(); 
+        TowerEntranceHub(player); 
     }
     else if (response == 2) 
     { 
@@ -342,7 +342,7 @@ static void TowerIntro (PlayerCharacter player)
 #endregion
 
 #region Tower Entrance Hub
-static void TowerEntranceHub()
+static void TowerEntranceHub(PlayerCharacter player)
 {
     Console.WriteLine("\nYou begin walking towards the tower, looking for any sign of movement.\n");
 
@@ -371,7 +371,7 @@ static void TowerEntranceHub()
         else if (towerDecision == 3)
         {
             UserAction("\nYou decide to walk up to the oak door that leads into the tower, still flapping along with the wind.\n");
-            BlindManEncounter();
+            BlindManEncounter(player);
             break;
         }
     }
@@ -379,12 +379,39 @@ static void TowerEntranceHub()
 #endregion
 
 #region Blind Man Encounter
-static void BlindManEncounter()
+static void BlindManEncounter(PlayerCharacter player)
 {
     Console.WriteLine("As you walk in, you notice a man sitting at the table next to a lantern with a dimmed flame.\n" +
                       "The man is hunched over, breathing heavily. You hear a faint rattle with each inhale.\n" +
                       "As you pull the door shut behind you, the man snaps his gaze in your direction.\n");
 
-    BlindMan("Who the fuck are you? Identify yourself.");    
+    BlindMan("Who the fuck are you? Identify yourself!");
+
+    Console.WriteLine("The man starts hacking, gripping the table beside him. He obviously doesn't use his voice much...");
+
+    while (true)
+    {
+        Console.WriteLine($"What do you say in response?\n" +
+                          $"1. My name is {player.PlayerName}. Who are you?" +
+                          $"2. I will answer in due time. What and where is this place?" +
+                          $"3. You first, old man.");
+        int characterResponse = Convert.ToInt32(Console.ReadLine());
+
+        if (characterResponse < 1 && characterResponse > 4) 
+        {
+            if (characterResponse == 1)
+            {
+
+            }
+            else if (characterResponse == 2) 
+            {
+
+            }
+            else if (characterResponse == 3)
+            {
+
+            }
+        }
+    }
 }
 #endregion
