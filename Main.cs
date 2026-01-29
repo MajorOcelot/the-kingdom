@@ -401,15 +401,17 @@ static void BlindManEncounter(PlayerCharacter player)
         {
             if (characterResponse == 1)
             {
-
+                BlindMan("I don't know or recognize you. I'm known as the Blind Man. Where do you hail from?");
             }
             else if (characterResponse == 2) 
             {
-
+                Console.WriteLine("The Blind Man attempts to speak, after clearing his throat.\n");
+                BlindMan("Hah! *hack* This is my home. This tower has stood for centuries. This is the last safe level of the Tower....Why?");
             }
             else if (characterResponse == 3)
             {
-
+                Console.WriteLine("You see what looks like a chuckle come from the Blind Man, yet you hear nothing.");
+                BlindMan("No manners, hey? Fine then. I'm the Blind Man, and this is my home. Now I ask again....who the fuck are you?");
             }
         }
     }
